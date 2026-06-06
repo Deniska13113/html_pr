@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Update repository
         run: |
-          cd /home/user/site
+          cd /home/user/docker_site
           git pull origin main
 
       - name: Restart containers
