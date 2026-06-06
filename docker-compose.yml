@@ -1,0 +1,11 @@
+services:
+  web_80:
+    build: site_80
+    ports:
+      - "80:80"
+    restart: always
+  web_2222:
+    build: site_2222
+    ports:
+      - "2222:80"
+    restart: always
