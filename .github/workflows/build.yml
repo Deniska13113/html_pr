@@ -6,16 +6,21 @@ jobs:
   deploy:
     runs-on: ${{ matrix.os }}
     strategy:
-        matrix:
-            os: [label-1, X64]
+      matrix:
+        os: [label-1, X64]
     steps:
       - name: Update repository
         run: |
-          cd /home/user/docker_site
-          git pull origin main
-
+          if [ -d "/home/user/docker_site" ]; then
+            cd /home/user/docker_site
+            git pull origin main
+          else
+            cd /home/user
+            git clone git@github.com:Deniska13113/html_pr.git
+            mv html_pr docker_site
+          fi
       - name: Restart containers
         run: |
           cd /home/user/docker_site
-          sudo docker compose down
-          sudo docker compose up -d --build
+          echo {{"secret.sudo_password"}} | sudo -s docker compose up -d  
+          echo {{"secret.sudo_password"}} | sudo docker compose up -d --build
