@@ -4,7 +4,10 @@ on:
     branches: [main]
 jobs:
   deploy:
-    runs-on: self-hosted
+    runs-on: ${{ matrix.os }}
+    strategy:
+        matrix:
+            os: [label-1, X64]
     steps:
       - name: Update repository
         run: |
