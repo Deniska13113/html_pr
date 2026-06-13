@@ -22,5 +22,5 @@ jobs:
       - name: Restart containers
         run: |
           cd /home/user/docker_site
-          echo {{"secret.sudo_password"}} | sudo -s docker compose up -d  
-          echo {{"secret.sudo_password"}} | sudo docker compose up -d --build
+          echo {{"secret.sudo_password"}} | sudo -Ss docker compose up -d  
+          echo {{"secret.sudo_password"}} | sudo -Ss docker compose up -d --build
