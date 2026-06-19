@@ -7,7 +7,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [label-yan, X64]
+        os: [label-yan, label-slow]
     steps:
       - name: Update repository
         run: |
