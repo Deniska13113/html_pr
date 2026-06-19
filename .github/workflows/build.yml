@@ -4,7 +4,10 @@ on:
     branches: [main]
 jobs:
   deploy:
-    runs-on: X64
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [label-yan, X64]
     steps:
       - name: Update repository
         run: |
