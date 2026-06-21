@@ -17,6 +17,7 @@ jobs:
           else
             cd /home/user
             git clone git@github.com:Deniska13113/html_pr.git
+            git checkout elfeat
             mv html_pr docker_site
           fi
       - name: Restart containers
