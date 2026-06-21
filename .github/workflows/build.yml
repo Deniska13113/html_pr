@@ -13,8 +13,8 @@ jobs:
         run: |
           if [ -d "/home/user/docker_site" ]; then
             cd /home/user/docker_site
-            git pull origin main
             git checkout elfeat
+            git pull origin main
           else
             cd /home/user
             git clone git@github.com:Deniska13113/html_pr.git
