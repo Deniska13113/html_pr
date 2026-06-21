@@ -1,13 +1,13 @@
 name: Build
 on:
   push:
-    branches: [main]
+    branches: [elfeat]
 jobs:
   deploy:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [label-yan, label-slow]
+        os: [label-slow]
     steps:
       - name: Update repository
         run: |
