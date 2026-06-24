@@ -30,9 +30,10 @@
       animation: move 1s infinite normal;
     }
     @keyframes move {
-      from { left:0; }
-      to {right: 100px; }
-      }
+      from {top: 200px; }
+      to {top: -200px; }
+    }
+      
 
     body {
 
@@ -44,12 +45,19 @@
       background: #ffb7e8;
       font-family: Arial, sans-serif;
     }
+    .custom-image {
+    width: 300px;
+    border-radius: 8px;
+    animation: normal;
+    padding-top: 10cm;
+    padding-right: 10cm
+    }
 
     .text {
       color: rgb(255, 52, 119);
       font-size: 32px;
       text-align: center;
-      padding: 20px;
+      padding: 50px;
     }
   </style>
 </head>
@@ -59,6 +67,10 @@
   <div class="text">
     Доброе утро, любовь моя, чуть чуть поигрался чтобы отдохнуть от плюсов. Забавная тема
     Надеюсь ти выспалась, люблю тебя!!!
+    PS 
+    Если тебе вдруг хочется поиграться попробуй добавить кнопки, а я попробую написать на ++ действия на эти кнопки (если получиться)
   </div>
+  <image src = pngtree-smooth-glossy-heart-vector-file-ai-and-png-png-image_4557871.png class="custom-image">
+    
 </body>
 </html>
