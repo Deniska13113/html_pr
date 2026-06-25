@@ -3,7 +3,7 @@ on:
   push:
     branches: [elfeat]
 jobs:
-  deploy:
+  Copy:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -22,12 +22,24 @@ jobs:
             cd /home/user/docker_site
             git checkout elfeat
           fi
-      - name: Test html
-        run: |
-          cd /home/user/docker_site/site_80/site
-          htmlhint "**/*.html"
-      - name: Restart containers
-        run: |
-          cd /home/user/docker_site
-          echo ${{ secrets.SUDO_PASSWORD }} | sudo -S docker compose down  
-          echo ${{ secrets.SUDO_PASSWORD }} | sudo -S docker compose up -d --build
+  Test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [label-slow]
+    steps:
+    - name: Test html
+      run: |
+        cd /home/user/docker_site/site_80/site
+        htmlhint "**/*.html"
+  Deploy:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [label-slow]
+    steps:
+    - name: Restart containers
+      run: |
+        cd /home/user/docker_site
+        echo ${{ secrets.SUDO_PASSWORD }} | sudo -S docker compose down  
+        echo ${{ secrets.SUDO_PASSWORD }} | sudo -S docker compose up -d --build
