@@ -4,10 +4,7 @@ on:
     branches: [elfeat]
 jobs:
   Copy:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [label-slow]
+    runs-on: label-slow
     steps:
       - name: Update repository
         run: |
@@ -23,20 +20,16 @@ jobs:
             git checkout elfeat
           fi
   Test:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [label-slow]
+    needs: Copy
+    runs-on: label-slow
     steps:
     - name: Test html
       run: |
         cd /home/user/docker_site/site_80/site
         htmlhint "**/*.html"
   Deploy:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [label-slow]
+    needs: Test
+    runs-on: label-slow
     steps:
     - name: Restart containers
       run: |
