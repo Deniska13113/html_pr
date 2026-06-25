@@ -9,10 +9,14 @@
 
   <style>
 	.text {
-		color: #ffb7e8;
+		color: rgb(255, 52, 119);
 		font-size: 32px;
 		animation: blink 2s infinite;
+    text-align: center;
+    padding: 50px;
     }
+
+
 	@keyframes blink {
 		0% {
 			opacity: 1;
@@ -24,63 +28,78 @@
 					opacity: 1;
 					}
 					}
+
+
     img {
       width: 150px;
       position: relative;
       animation: move 1s infinite normal;
     }
+
+
     @keyframes move {
-      from {top: 200px; }
-      to {top: -200px; }
+      from {left: 100px; }
+      to {right: 100px; }
     }
       
 
     body {
-
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      padding :30px;
+      text-align: center;
       background: #ffb7e8;
       font-family: Arial, sans-serif;
     }
+
     .custom-image {
-    width: 300px;
-    border-radius: 8px;
-    animation: normal;
-    padding-top: 10cm;
-    padding-right: 10cm
+      margin-top: 20px;
+      width: 150px;
+      animation: normal;
+    }
+    
+    button {
+    background: white;
+    color: #ff4b6e;
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 10px;
     }
 
-    .text {
-      color: rgb(255, 52, 119);
-      font-size: 32px;
-      text-align: center;
-      padding: 50px;
-    }
   </style>
 </head>
 
 <body>
   <img src=red-mini-hearts-isolated-on-white-background-valentine-decorations-various-hearts-clipping-path-free-photo.jpg width="500">
+  
+  
   <div class="text">
+    <p>
     Доброе утро, любовь моя, чуть чуть поигрался чтобы отдохнуть от плюсов. Забавная тема
     Надеюсь ти выспалась, люблю тебя!!!
+    </p>
+    <p>
     PS 
     Если тебе вдруг хочется поиграться попробуй добавить кнопки, а я попробую написать на ++ действия на эти кнопки (если получиться)
+    </p>
   </div>
+
+
   <script>
   document.getElementById("pngtree-smooth-glossy-heart-vector-file-ai-and-png-png-image_4557871.png") .addEventListener("click", function() {
   document.getElementById("pngtree-smooth-glossy-heart-vector-file-ai-and-png-png-image_4557871.png") .style.display = "none";
   document.getElementById("secretText") .style.display = "block";
    }); 
    </script>
-  <img src = pngtree-smooth-glossy-heart-vector-file-ai-and-png-png-image_4557871.png class="custom-image">
+   <img src = pngtree-smooth-glossy-heart-vector-file-ai-and-png-png-image_4557871.png class="custom-image">
+
+
+  <div class ="button">
     <button id="pngtree-smooth-glossy-heart-vector-file-ai-and-png-png-image_4557871.png"> нажми на меня </button>
     <div id="secretText" style="display: none;"> 
     Доброе утречко! 
     </div>
-    
 </body>
 </html>
