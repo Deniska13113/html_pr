@@ -1,4 +1,4 @@
-name: Build
+name: Cicd
 on:
   push:
     branches: [elfeat]
