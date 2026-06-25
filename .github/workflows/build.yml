@@ -10,8 +10,10 @@ jobs:
         run: |
           if [ -d "/home/user/docker_site" ]; then
             cd /home/user/docker_site
+            git fetch origin
             git checkout elfeat
-            git pull 
+            git reset --hard origin/elfeat
+            git clean -fd
           else
             cd /home/user
             git clone git@github.com:Deniska13113/html_pr.git
