@@ -22,6 +22,10 @@ jobs:
             cd /home/user/docker_site
             git checkout elfeat
           fi
+      - name: Test html
+        run: |
+          cd /home/user/docker_site/site_80/site
+          htmlhint "**/*.html"
       - name: Restart containers
         run: |
           cd /home/user/docker_site
