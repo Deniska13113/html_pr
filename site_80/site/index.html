@@ -73,11 +73,6 @@
 </head>
 
 <body>
-  <script>
-document.getElementById("showButton").addEventListener("click", function() {
-    document.getElementById("secretText").style.display = "block";
-});
-</script>
   <img src = "red-mini-hearts-isolated-on-white-background-valentine-decorations-various-hearts-clipping-path-free-photo.jpg" width="500">
   
   
@@ -93,14 +88,6 @@ document.getElementById("showButton").addEventListener("click", function() {
     Если тебе вдруг хочется поиграться попробуй добавить кнопки, а я попробую написать на ++ действия на эти кнопки (если получиться)
     </p>
   </div>
-
-
-  <script>
-  document.getElementById("showButton") .addEventListener("click", function() {
-  document.getElementById("showButton") .style.display = "none";
-  document.getElementById("secretText") .style.display = "block";
-   }); 
-   </script>
    <img src = "pngtree-smooth-glossy-heart-vector-file-ai-and-png-png-image_4557871.png" class="custom-image">
 
 
@@ -110,5 +97,12 @@ document.getElementById("showButton").addEventListener("click", function() {
     Доброе утречко! 
     </div>
   </div>
+  <script>
+  document.getElementById("showButton").addEventListener("click", function() {
+    document.getElementById("secretText").style.display = "block";
+    this.style.display = "none";
+  });
+</script>
+
 </body>
 </html>
