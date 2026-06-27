@@ -54,6 +54,21 @@
       width: 150px;
       pointer-events: none;
     }
+    .cat {
+  width: 400px;
+  position: relative;
+  animation: flyCat 4s ease-in-out infinite alternate;
+}
+
+@keyframes flyCat {
+  0% {
+    transform: translateX(-80px);
+  }
+
+  100% {
+    transform: translateX(80px);
+  }
+}
 
     button {
     background: white;
@@ -108,7 +123,7 @@
 </head>
 
 <body>
-  <img src = "kit.png" width="400">
+  <img src = "kit.png" class="cat">
   
   
   <div class="text">
