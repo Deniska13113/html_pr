@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-	<div class="кс топ"> 
-	</div>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -54,7 +52,7 @@
     .custom-image {
       margin-top: 20px;
       width: 150px;
-      animation: normal;
+      pointer-events: none;
     }
 
     button {
@@ -67,6 +65,8 @@
     cursor: pointer;
     transition: 0.3s;
     margin: 10px;
+        position: relative;
+    z-index: 10;
     }
 
   </style>
