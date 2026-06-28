@@ -3,18 +3,9 @@ services:
     build: site_80
     ports:
       - "80:80"
+      - "443:443"
     restart: always
     volumes:
-      - ./nginx.conf
-      - /etc/letsencrypt/live/angel.popovdesigns.uk/fullchain.pem
-      - /etc/letsencrypt/live/angel.popovdesigns.uk/privkey.pem
-
-  web_2222:
-    build: site_2222
-    ports:
-      - "2222:80"
-    restart: always
-    volumes:
-      - ./nginx.conf
-      - /etc/letsencrypt/live/angel.popovdesigns.uk/fullchain.pem
-      - /etc/letsencrypt/live/angel.popovdesigns.uk/privkey.pem
+      - ./default.conf:/etc/nginx/conf.d/default.conf:ro
+      - /etc/letsencrypt/archive/angel.popovdesigns.uk:/etc/nginx/ssl:ro
+  
