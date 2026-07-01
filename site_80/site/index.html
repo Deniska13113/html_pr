@@ -75,6 +75,32 @@
         position: relative;
     z-index: 10;
     }
+    .question {
+    color: rgb(255, 52, 119);
+    font-size: 30px;
+    font-family: 'Gill Sans', sans-serif;
+}
+
+.buttons {
+    position: relative;
+    height: 200px;
+}
+
+#yesButton,
+#noButton {
+    position: absolute;
+    width: 120px;
+}
+
+#yesButton {
+    left: 40%;
+    top: 20px;
+}
+
+#noButton {
+    left: 55%;
+    top: 20px;
+}
     .secretText {
   display: none;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -126,24 +152,41 @@
    <img src = "pngtree-smooth-glossy-heart-vector-file-ai-and-png-png-image_4557871.png" class="custom-image">
 
 
-  <div class ="button">
-    <button id="showButton"> нажми на меня </button>
-    <div id="secretText" class = "secretText"> 
-    if you´re reading this, i love u!! 
-    </div>
-  </div>
+  <h2 class="question">Ты меня ещё любишь?</h2>
+
+<div class="buttons">
+    <button id="yesButton">Да</button>
+    <button id="noButton">Нет</button>
+</div>
+
+<div id="secretText" class="secretText">
+    Ах вот как... 
+</div>
   <script>
-  document.getElementById("showButton").addEventListener("click", function () {
+const yesButton = document.getElementById("yesButton");
+const noButton = document.getElementById("noButton");
+const secretText = document.getElementById("secretText");
 
-    let text = document.getElementById("secretText");
+// Кнопка "Да" убегает
+yesButton.addEventListener("mouseover", function () {
 
-    this.style.display = "none";
+    const maxX = window.innerWidth - yesButton.offsetWidth - 20;
+    const maxY = window.innerHeight - yesButton.offsetHeight - 20;
 
-    text.classList.add("show");
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
 
-    setTimeout(function () {
-        text.classList.remove("show");
-        text.style.display = "none";
+    yesButton.style.left = x + "px";
+    yesButton.style.top = y + "px";
+});
+
+// Кнопка "Нет"
+noButton.addEventListener("click", function () {
+
+    secretText.classList.add("show");
+
+    setTimeout(() => {
+        secretText.classList.remove("show");
     }, 3000);
 
 });
