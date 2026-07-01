@@ -173,8 +173,8 @@ yesButton.addEventListener("mouseover", function () {
     const maxX = window.innerWidth - yesButton.offsetWidth - 20;
     const maxY = window.innerHeight - yesButton.offsetHeight - 20;
 
-    const x = Math.random() * maxX;
-    const y = Math.random() * maxY;
+    const x = Math.random() * (window.innerWidth - 150);
+const y = Math.random() * (window.innerHeight - 150);
 
     yesButton.style.left = x + "px";
     yesButton.style.top = y + "px";
