@@ -24,4 +24,11 @@ services:
     volumes:
       - ./default.conf:/etc/nginx/conf.d/default.conf:ro
       - /etc/letsencrypt/archive/angel.popovdesigns.uk:/etc/nginx/ssl:ro
-  
+  web_4444:
+    build: site_4444
+    ports:
+      - "4444:443"
+    restart: always
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf:ro
+      - /etc/letsencrypt/archive/angel.popovdesigns.uk:/etc/nginx/ssl:ro
