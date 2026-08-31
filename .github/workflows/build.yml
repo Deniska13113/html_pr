@@ -4,7 +4,7 @@ on:
     branches: [elfeat]
 jobs:
   Copy:
-    runs-on: label-slow
+    runs-on: nid
     steps:
       - name: Update repository
         run: |
@@ -23,7 +23,7 @@ jobs:
           fi
   Test:
     needs: Copy
-    runs-on: label-slow
+    runs-on: nid
     steps:
     - name: Test html
       run: |
@@ -31,7 +31,7 @@ jobs:
         htmlhint "**/*.html"
   Deploy:
     needs: Test
-    runs-on: label-slow
+    runs-on: nid
     steps:
     - name: Restart containers
       run: |
