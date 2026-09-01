@@ -27,7 +27,7 @@ jobs:
     steps:
     - name: Test html
       run: |
-        cd /home/user/docker_site/site_80/site
+        cd /home/user/docker_site/site_80
         htmlhint "**/*.html"
   Deploy:
     needs: Test
