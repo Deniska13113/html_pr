@@ -23,7 +23,7 @@ jobs:
           fi
   Test:
     needs: Copy
-    runs-on: nid
+    runs-on: Ger
     steps:
     - name: Test html
       run: |
@@ -31,7 +31,7 @@ jobs:
         htmlhint "**/*.html"
   Deploy:
     needs: Test
-    runs-on: nid
+    runs-on: Ger
     steps:
     - name: Restart containers
       run: |
