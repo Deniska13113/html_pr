@@ -4,7 +4,7 @@ on:
     branches: [elfeat]
 jobs:
   Copy:
-    runs-on: nid
+    runs-on: Ger
     steps:
       - name: Update repository
         run: |
